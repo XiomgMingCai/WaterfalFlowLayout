@@ -1,9 +1,9 @@
  ##onscroll事件实现瀑布流布局的图片加载功能
+  ![offsetLeft](https://github.com/XiomgMingCai/WaterfalFlowLayout/blob/master/01_js%20%E5%AE%9E%E7%8E%B0%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/images/Snip20161207_66.png?raw=true)
       【原理】
       当滚动滚动条时，判断是否要加载新的图片，通过一个函数，返回布尔值。
       需要加载的条件：
       页面最下面的元素box在视口中露出一半的高度时，开始加载。具体计算：(scrollTop+可视宽口高度)>(box.offsetTop+自身高度一半)时，加载（如图所示）。
-      ![box在视口中露出一半的高度时开始加载](https://github.com/XiomgMingCai/WaterfalFlowLayout/blob/master/01_js%20%E5%AE%9E%E7%8E%B0%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/images/Snip20161207_66.png?raw=true)
       【知识点】
       ①scrollTop标准模式和混杂模式的兼容问题。
       标准模式--document.body.scrollTop
