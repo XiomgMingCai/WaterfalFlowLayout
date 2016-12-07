@@ -19,12 +19,22 @@ function waterfall(parent, box) {
     //设置main 的 宽()
     oParent.style.cssText = 'width:' + oBoxW * cols + 'px; margin:0 auto';
 
-    var hArr =[];//存放每列高度的数组
-    for(var i= 0; i< oBoxs.length;i++){
-        if(i <cols){
-            hArr.push(oBoxs[i].offsetHeight);
-        }
+    var hArr = [];//存放每列高度的数组
+    for (var i = 0; i < oBoxs.length; i++) {
+        if (i < cols) {
+            hArr.push(oBoxs[i].offsetHeight);//offsetHeight(获取盒子高度)
+        } else {
+            var minh = Math.min.apply(null, hArr);
+            var index = getMinhindex(hArr, minh);
+            oBoxs[i].style.position ='absolute';
+            oBoxs[i].style.top = minh +'px';
+            // oBoxs[i].style.left= oBoxW * index + 'px';
+            oBoxs[i].style.left = oBoxs[index].offsetLeft + 'px';
+            //我们数组放每一列的高 而不是前六列的高
+            hArr[index]  = hArr[index] + oBoxs[i].offsetHeight;
+        } 
     }
+    console.log(index)
     console.log(hArr)
 }
 
@@ -42,4 +52,12 @@ function getByclass(parent, clsname) {
         }
     }
     return boxArr;
+}
+//获得最小值的位置
+function getMinhindex(arr, minh) {
+    for (var i in arr) {
+        if (arr[i] == minh) {
+            return i;
+        }
+    }
 }

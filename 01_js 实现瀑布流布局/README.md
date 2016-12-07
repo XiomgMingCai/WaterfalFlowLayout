@@ -28,6 +28,8 @@
    #### 4.存放offsetHeight的数组值hArr要不断更改
    在每次加入新图片后，最小高度的box加上定位在其下的box的offsetHeight <br>即：hArr[index]+=oBoxs[i].offsetHeight;
 
+ ![offsetLeft](http://www.cftea.com/c/2009/01/R3MW6VH4GID77IZV/REUW6Z0WU6ZHU5EK.png)
+
       **offsetWidth属性包括padding在内的宽度，而不是元素的width值**
       offsetWidth = 内容宽度 + 内边距宽度×2 +边框宽度×2  【不包括外边距margin】
 
