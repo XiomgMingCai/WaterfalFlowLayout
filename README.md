@@ -5,6 +5,8 @@
 2: JQ JQurey方法<br>
 3: CSS CSS3的多栏布局<br>
 
+***
+[瀑布流js控制效果示例!](https://xiomgmingcai.github.io/WaterfalFlowLayout/)
 ###Javascript 实现瀑布流布局，
 父级的应为relative
 每个数据块上的 position 属性应定义为（absolute）
